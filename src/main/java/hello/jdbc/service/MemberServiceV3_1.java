@@ -48,10 +48,6 @@ public class MemberServiceV3_1 {
         memberRepository.update(toId, toMember.getMoney() + money);
     }
 
-    private static void release(Connection con) throws SQLException {
-        con.setAutoCommit(true); // 커넥션풀에서 그냥 반환하면 autocomit false인 상태로 반납됨
-        con.close();
-    }
 
     private static void validation(Member toMember) {
         if(toMember.getMemberId().equals("ex")){
