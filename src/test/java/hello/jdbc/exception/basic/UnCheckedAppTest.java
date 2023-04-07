@@ -17,6 +17,16 @@ public class UnCheckedAppTest {
                 .isInstanceOf(Exception.class);
     }
 
+    @Test
+    void printEx(){
+        Controller controller = new Controller();
+        try {
+        controller.request();
+        } catch (Exception e){
+            log.info("ex",e);
+        }
+    }
+
     static class Controller{
         Service service = new Service();
 
